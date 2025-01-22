@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="min-h-screen py-8">
+    <div class="container mx-auto px-4 dashboard-container animate__animated animate__fadeIn">
+        <header class="dashboard-header">
+            <h1 class="dashboard-title">Student Dashboard</h1>
+            <div class="title-underline"></div>
+            <div class="update-container">
+                <span class="status-indicator"></span>
+                <span id="lastUpdated">Last Updated: Fetching...</span>
+            </div>
+        </header>
+
+        <div class="card-grid p-6" id="dashboardCards">
+            <!-- Cards will be generated dynamically -->
+        </div>
+
+        <div id="latencyContainer" class="mt-4 text-center">
+            <span id="latencyBadge" class="latency-badge hidden"></span>
+        </div>
+
+    </div>
+    <script src="{{ url_for('static', filename='js/config.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/formatDate.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/updateDashboard.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+</body>
+</html>
